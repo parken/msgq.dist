@@ -15,7 +15,7 @@ exports.default = function (a) {
   if (env === 'production') {
     app.use((0, _serveFavicon2.default)(_path2.default.join(_environment2.default.root, 'client', 'favicon.ico')));
   }
-  setup.init(app);
+
   app.set('appPath', _path2.default.join(_environment2.default.root, 'client'));
   app.use(_express2.default.static(app.get('appPath')));
   app.use((0, _cors2.default)());
@@ -32,8 +32,7 @@ exports.default = function (a) {
     if (req.headers.origin) req.origin = req.headers.origin.split('://')[1];
     next();
   });
-  (0, _express4.default)(app);
-  (0, _express6.default)(app, routes);
+  routes.default(app);
   // errors passed using next(err)
   app.use(function (e, req, res, next) {
     var err = e;
@@ -42,7 +41,7 @@ exports.default = function (a) {
         user = req.user;
 
 
-    _logger2.default.error(err.message, err, {
+    console.error(err.message, err, {
       url: req.originalUrl,
       body: body,
       headers: headers,
@@ -151,22 +150,6 @@ var _environment2 = _interopRequireDefault(_environment);
 var _routes = require('./../routes');
 
 var routes = _interopRequireWildcard(_routes);
-
-var _logger = require('../components/logger');
-
-var _logger2 = _interopRequireDefault(_logger);
-
-var _setup = require('../components/setup');
-
-var setup = _interopRequireWildcard(_setup);
-
-var _express3 = require('./../components/feed/express');
-
-var _express4 = _interopRequireDefault(_express3);
-
-var _express5 = require('./../components/oauth/express');
-
-var _express6 = _interopRequireDefault(_express5);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
