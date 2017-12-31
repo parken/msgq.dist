@@ -13,7 +13,7 @@ if (fs.existsSync(envFile)) {
   var env = dotenv.config({ path: envFile });
   config = env.parsed || env;
 } else {
-  console.log('.env file not found.\n  Please create manually or visit http://localhost:3000\n  Learn more at check installation docs at https://github.com/parken/msgque/blob/' + pkg.version + '/docs/Installation.md\n  Trying to connect with default settings.\n  ');
+  console.log('.env file not found.\n  Please create manually or visit http://msgq.test\n  Learn more at check installation docs at https://github.com/parken/msgque/blob/' + pkg.version + '/docs/Installation.md\n  Trying to connect with default settings.\n  ');
 }
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 var settings = {

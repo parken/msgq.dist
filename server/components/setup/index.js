@@ -100,7 +100,7 @@ function setup() {
         MYSQL_HOST = _req$body.MYSQL_HOST,
         MYSQL_TZ = _req$body.MYSQL_TZ,
         _req$body$PORT = _req$body.PORT,
-        PORT = _req$body$PORT === undefined ? 3000 : _req$body$PORT,
+        PORT = _req$body$PORT === undefined ? 4500 : _req$body$PORT,
         _req$body$SERVER_IDEN = _req$body.SERVER_IDENTIFIER,
         SERVER_IDENTIFIER = _req$body$SERVER_IDEN === undefined ? 'msgque' : _req$body$SERVER_IDEN,
         _req$body$SERVER_NAME = _req$body.SERVER_NAME,
